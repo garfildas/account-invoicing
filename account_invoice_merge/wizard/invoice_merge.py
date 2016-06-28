@@ -54,12 +54,13 @@ class InvoiceMerge(models.TransientModel):
     @api.model
     def fields_view_get(self, view_id=None, view_type='form', toolbar=False,
                         submenu=False):
-        """Changes the view dynamically
-         @param self: The object pointer.
-         @param cr: A database cursor
-         @param uid: ID of the user currently logged in
-         @param context: A standard dictionary
-         @return: New arch of view.
+        """Change the view dynamically
+
+        @param self: The object pointer.
+        @param cr: A database cursor
+        @param uid: ID of the user currently logged in
+        @param context: A standard dictionary
+        @return: New arch of view.
         """
         res = super(InvoiceMerge, self).fields_view_get(
             view_id=view_id, view_type=view_type, toolbar=toolbar,
@@ -69,15 +70,15 @@ class InvoiceMerge(models.TransientModel):
 
     @api.multi
     def merge_invoices(self):
-        """To merge similar type of account invoices.
+        """Merge similar type of account invoices.
 
-             @param self: The object pointer.
-             @param cr: A database cursor
-             @param uid: ID of the user currently logged in
-             @param ids: the ID or list of IDs
-             @param context: A standard dictionary
+        @param self: The object pointer.
+        @param cr: A database cursor
+        @param uid: ID of the user currently logged in
+        @param ids: the ID or list of IDs
+        @param context: A standard dictionary
 
-             @return: account invoice action
+        @return: account invoice action
         """
         inv_obj = self.env['account.invoice']
         aw_obj = self.env['ir.actions.act_window']
